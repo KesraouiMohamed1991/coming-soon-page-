@@ -1,0 +1,276 @@
+@use './assets/reset';
+// Colors
+
+// Primary 
+$Desaturated-Red: hsl(0, 36%, 70%);
+$Soft-Red: hsl(0, 93%, 68%);
+
+// Neutral 
+$Dark-Grayish : hsl(0, 6%, 24%);
+
+
+//  Gradients 
+$first: Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+$second: Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+
+html{
+font-size: 16px;
+}
+
+
+main{
+    height: 100vh;
+    overflow-x: hidden;
+.container{
+
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    position: relative;
+                background-image: url(/images/bg-pattern-desktop.svg);
+
+    header{
+
+        height: 140px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .logo{
+            margin-left: 1rem;
+        }
+    }
+    section{
+        height: calc(100% - 140px);
+        .part{
+            height: 100%;
+            .partone{
+                width: 55%;
+                height: 100%;
+                @extend #flex-col;
+                .main-heading{
+                    height: 30%;
+                    width: 60%;
+
+                    span{
+                    display: block  ;
+                    font-size: 3.3rem;
+                    letter-spacing: 0.3rem;
+                    height: 33%;
+                    }
+                    .first{
+                    font-size: 3.7rem;
+                    font-weight: 200;
+                    }
+
+                         }
+                    p{
+                     width: 65%;
+                    height: 30%;
+                    font-size: 1.2rem;
+                    color: $Desaturated-Red;
+                    line-height: 3rem;
+                      }
+                  .input{
+                    margin-top:1rem ;
+                    width: 60%;
+                    height: 20%;
+                    position: relative;
+                    .input-field{
+                        font-size: 1rem;
+                        height: 3rem;
+                        width: 76%;
+                        border-radius: 2rem;
+                        border: 1px solid $Desaturated-Red ;
+                        outline: none;
+                        font-family: 'Josefin Sans', ' Gill Sans MT', Calibri, ' Trebuchet MS', sans-serif;
+
+                    &::placeholder {
+                            color:$Desaturated-Red;
+                            padding: 2rem;
+                            font-weight: 600;
+                        }
+                    }
+                    button{
+                        background-color: $Soft-Red;
+                        width: 100px;
+                        height: 3rem;
+                        border-radius: 2rem;
+                        position: absolute;
+                        right: 80px;
+                        outline: none;
+                        border: none;
+                        
+                    }
+                    .alerte{
+                        width: 100%;
+                        display: none;
+
+                        p{
+                        padding: 10px;
+                        font-size: 12px;
+                        color: $Soft-Red;
+                        }
+                      
+                    }
+                    .alerte-icon {
+                    display: none;
+                    position: absolute;
+                    top: 12px;
+                    left: 200px;
+
+                    }
+                   
+                }
+
+            }
+            .parttwo {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                left: 67.3%;
+                width: 55%;
+                background-image: url(/images/hero-desktop.jpg);
+                @extend #back ;
+            }
+        }
+    }
+}
+}
+
+
+@media (max-width: 500px) {
+
+main {
+        .container {
+            width: 450px;
+            margin-left: auto;
+                margin-right: auto;
+
+            header{
+
+                height: 80px;
+            }
+
+            section{
+                    height: calc(100% - 80px);
+                    width: 100%;
+                .part{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    width: 100%;
+               
+
+                    .partone {
+                        width: 100%;
+                        height: 60%;
+
+                        .main-heading {
+                                height: 30%;
+                                width: 100%;
+                                    padding-top: 2rem;
+                                    text-align: center;
+                        
+                                span {
+                                    margin-left: 1rem;
+                                    display: inline;
+                                    font-size: 1.3rem;
+                                    letter-spacing: 0.3rem;
+                                    height: 33%;
+                                    width: 80%;
+                                }
+                        
+                                .first {
+                                font-size: 1.3rem;
+                                font-weight: 400;
+                                &:hover {
+                                        color: $Soft-Red;
+                                    }
+                                }
+                            }
+                          
+                        
+                            p {
+                                    width: 80%;
+                                height: 20%;
+                                font-size: 0.8rem;
+                                line-height: 1.2rem;
+                                    text-align: center;
+                            }
+                        
+                            .input {
+                                    margin-top: 2rem;
+                                    width: 80%;
+                                    height: 20%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    place-items: center;
+                        
+                                .input-field {
+                                    font-size: 1rem;
+                                    height: 2.3rem;
+                                    border-radius: 2rem;
+                                    border: 1px solid $Desaturated-Red ;
+                                    outline: none;
+                                    font-family: 'Josefin Sans', ' Gill Sans MT', Calibri, ' Trebuchet MS', sans-serif;
+                        
+                                    &::placeholder {
+                                    color: $Desaturated-Red;
+                                    padding: 2rem;
+                                    font-weight: 600;
+                                    }
+                                }
+                        
+                                button {
+                                    background-color: $Soft-Red;
+                                    width: 100px;
+                                    height: 2.3rem;
+                                    border-radius: 2rem;
+                                    position: absolute;
+                                    right: 20px;
+                                    outline: none;
+                                    border: none;
+                        
+                                }
+                                .alerte-icon {
+                                    position: absolute;
+                                    top: 5px;
+                                    width: 80%;
+                                    left: 200px;
+
+                                }
+                        
+                        
+                            }
+
+
+                     }
+                     
+                    .parttwo{
+                        width: 100%;
+                        height: 40%;
+                        position: static;
+                        background-image: url(/images/hero-mobile.jpg);
+                    }
+            }
+
+
+    
+}
+}
+}
+}
+
+
+
+
+@media (min-width:1400px) {
+
+    main {
+        .container {
+
+            width: 1350px;
+        }
+
+    }
+}
